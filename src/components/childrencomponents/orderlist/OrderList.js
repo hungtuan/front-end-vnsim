@@ -269,12 +269,12 @@ function OrderList() {
                             </a>
                           ) : (
                             <a href="#" className="text-danger">
-                              {
-                                orderTrackings.find(
-                                  (track) =>
-                                    track.codeStatus === item.orderTracking
-                                ).name
-                              }
+                              {orderTrackings
+                                ? orderTrackings.find(
+                                    (track) =>
+                                      track.codeStatus === item.orderTracking
+                                  )?.name || "Trạng thái không xác định"
+                                : "Đang tải dữ liệu..."}
                             </a>
                           )}
                         </li>
